@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "schedule:weekly"],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions",
+      "commitMessagePrefix": "chore(deps/github-actions):"
+    },
+    {
+      "matchManagers": ["terraform"],
+      "groupName": "terraform",
+      "commitMessagePrefix": "chore(deps/terraform):"
+    },
+    {
+      "matchManagers": ["npm"],
+      "groupName": "npm",
+      "commitMessagePrefix": "chore(deps/npm):"
+    }
+  ]
+}
