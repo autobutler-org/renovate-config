@@ -7,6 +7,9 @@ merges it under every repository's own `renovate.json`
 ([inherited config](https://docs.renovatebot.com/config-overview/#inherited-config)).
 A repository's config overrides anything set here.
 
+Renovate's runs, logs and job status for the org are on the
+[Mend dashboard](https://developer.mend.io/github/autobutler-org).
+
 ## Policy
 
 - `config:recommended`, which includes the Dependency Dashboard issue in each repository.
@@ -21,8 +24,8 @@ repository's `renovate.json`.
 ## Changing it
 
 The app only turns inherited config on after it sees a commit to
-`org-inherited-config.json`. If a change does not seem to apply, check the logs in the
-[Mend developer portal](https://developer.mend.io).
+`org-inherited-config.json`. If a change does not seem to apply, check the logs on the
+[Mend dashboard](https://developer.mend.io/github/autobutler-org).
 
 Validate before pushing:
 
