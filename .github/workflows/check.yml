@@ -1,0 +1,33 @@
+# Validates every Renovate config in this repo. A broken file here breaks Renovate in every
+# repository in the org, silently: the hosted app just logs an error on the Mend dashboard.
+name: Check
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+
+      # Unpinned on purpose: the hosted app always runs the latest Renovate, so this checks
+      # against the same schema it will read the files with.
+      - name: Validate Renovate config
+        run: |
+          git ls-files -z '*.json' | xargs -0 npx --yes --package renovate -- renovate-config-validator --strict
