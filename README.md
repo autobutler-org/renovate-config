@@ -13,10 +13,12 @@ Renovate's runs, logs and job status for the org are on the
 ## Policy
 
 - `config:recommended`, which includes the Dependency Dashboard issue in each repository.
-- Weekly: updates open early on Monday morning (UTC). A repository can override this per
+- Daily: updates open before 4am (UTC). A repository can override this per
   package, as iac does for its quark image.
-- One grouped pull request per ecosystem for GitHub Actions, Terraform and npm, so a busy
-  week produces one PR and one CI run per ecosystem instead of one per dependency.
+- One grouped pull request per ecosystem for GitHub Actions, Terraform, npm, Go modules and
+  Dart/Flutter (pub), so a busy day produces one PR and one CI run per ecosystem instead of
+  one per dependency.
+- Go updates run `go mod tidy`, as Dependabot did, so `go.sum` stays consistent.
 
 Keep this file generic. Anything that applies to one repository belongs in that
 repository's `renovate.json`.

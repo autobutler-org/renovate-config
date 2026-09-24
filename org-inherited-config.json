@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "schedule:weekly"],
+  "extends": ["config:recommended", "schedule:daily"],
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
@@ -16,6 +16,17 @@
       "matchManagers": ["npm"],
       "groupName": "npm",
       "commitMessagePrefix": "chore(deps/npm):"
+    },
+    {
+      "matchManagers": ["gomod"],
+      "groupName": "golang",
+      "commitMessagePrefix": "chore(deps/golang):",
+      "postUpdateOptions": ["gomodTidy"]
+    },
+    {
+      "matchManagers": ["pub"],
+      "groupName": "dart",
+      "commitMessagePrefix": "chore(deps/dart):"
     }
   ]
 }
