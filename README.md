@@ -2,13 +2,11 @@
 
 Organization-wide [Renovate](https://docs.renovatebot.com/) policy for autobutler-org.
 
-The policy is `default.json`. The Mend-hosted Renovate app only reads
-`org-inherited-config.json` from this repository (the name is fixed on the hosted app), so
-that file does nothing but extend `github>autobutler-org/renovate-config`, which resolves to
-`default.json`. The app merges the result under every repository's own `renovate.json`
-([inherited config](https://docs.renovatebot.com/config-overview/#inherited-config)), and a
-repository's config overrides anything set here. Edit `default.json`; leave the other file
-alone.
+The policy is `org-inherited-config.json`. The Mend-hosted Renovate app reads that file
+from this repository (the name is fixed on the hosted app) and merges it under every
+repository's own `renovate.json`
+([inherited config](https://docs.renovatebot.com/config-overview/#inherited-config)). A
+repository's config overrides anything set here.
 
 Renovate's runs, logs and job status for the org are on the
 [Mend dashboard](https://developer.mend.io/github/autobutler-org).
@@ -23,7 +21,7 @@ Renovate's runs, logs and job status for the org are on the
   one per dependency.
 - Go updates run `go mod tidy`, as Dependabot did, so `go.sum` stays consistent.
 
-Keep `default.json` generic. Anything that applies to one repository belongs in that
+Keep `org-inherited-config.json` generic. Anything that applies to one repository belongs in that
 repository's `renovate.json`.
 
 ## Changing it
@@ -35,5 +33,5 @@ The app only turns inherited config on after it sees a commit to
 Validate before pushing. The `Check` workflow runs the same thing on every pull request:
 
 ```bash
-npx --yes --package renovate -- renovate-config-validator --strict default.json org-inherited-config.json
+npx --yes --package renovate -- renovate-config-validator --strict org-inherited-config.json
 ```
