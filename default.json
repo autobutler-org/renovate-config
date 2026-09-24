@@ -27,6 +27,12 @@
       "matchManagers": ["pub"],
       "groupName": "dart",
       "commitMessagePrefix": "chore(deps/dart):"
+    },
+    {
+      "description": "TypeScript 7 is the Go-ported compiler with a restructured package (no more typescript/lib/tsc export). vue-tsc and typescript-eslint, which the Nuxt sites use, don't support it yet; revisit once they do.",
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }
