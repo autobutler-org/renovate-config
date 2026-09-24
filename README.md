@@ -32,7 +32,7 @@ The app only turns inherited config on after it sees a commit to
 `org-inherited-config.json`. If a change does not seem to apply, check the logs on the
 [Mend dashboard](https://developer.mend.io/github/autobutler-org).
 
-Validate before pushing:
+Validate before pushing. The `Check` workflow runs the same thing on every pull request:
 
 ```bash
 npx --yes --package renovate -- renovate-config-validator --strict default.json org-inherited-config.json
