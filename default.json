@@ -29,6 +29,11 @@
       "commitMessagePrefix": "chore(deps/dart):"
     },
     {
+      "description": "Give each major update its own PR, on a branch named after the dependency (e.g. renovate/github.com-swaggo-files-2.x) rather than a shared renovate/major-<group>.",
+      "matchUpdateTypes": ["major"],
+      "groupName": null
+    },
+    {
       "description": "TypeScript 7 is the Go-ported compiler with a restructured package (no more typescript/lib/tsc export). vue-tsc and typescript-eslint, which the Nuxt sites use, don't support it yet; revisit once they do.",
       "matchPackageNames": ["typescript"],
       "matchUpdateTypes": ["major"],
