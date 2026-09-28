@@ -38,6 +38,12 @@
       "matchPackageNames": ["typescript"],
       "matchUpdateTypes": ["major"],
       "enabled": false
+    },
+    {
+      "description": "gin-swagger still imports github.com/swaggo/files (v1), so the /v2 module can't replace it yet; revisit once gin-swagger moves to v2.",
+      "matchPackageNames": ["github.com/swaggo/files"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }

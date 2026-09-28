@@ -32,6 +32,8 @@ Renovate's runs, logs and job status for the org are on the
 - Go updates run `go mod tidy`, as Dependabot did, so `go.sum` stays consistent.
 - No TypeScript major updates: vue-tsc and typescript-eslint do not support TypeScript 7
   yet. Remove the rule once they do.
+- No `github.com/swaggo/files` major updates: gin-swagger still depends on v1. Remove
+  the rule once it moves to `github.com/swaggo/files/v2`.
 
 Keep `default.json` generic. Anything that applies to one repository belongs in that
 repository's `renovate.json`.
