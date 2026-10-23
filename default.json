@@ -29,6 +29,11 @@
       "commitMessagePrefix": "chore(deps/dart):"
     },
     {
+      "matchManagers": ["cargo"],
+      "groupName": "rust",
+      "commitMessagePrefix": "chore(deps/rust):"
+    },
+    {
       "description": "Give each major update its own PR, on a branch named after the dependency (e.g. renovate/github.com-swaggo-files-2.x) rather than a shared renovate/major-<group>.",
       "matchUpdateTypes": ["major"],
       "groupName": null

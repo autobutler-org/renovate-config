@@ -26,9 +26,9 @@ Renovate's runs, logs and job status for the org are on the
 - `config:recommended`, which includes the Dependency Dashboard issue in each repository.
 - Daily: updates open before 4am (UTC). A repository can override this per
   package, as iac does for its quark image.
-- One grouped pull request per ecosystem for GitHub Actions, Terraform, npm, Go modules and
-  Dart/Flutter (pub), so a busy day produces one PR and one CI run per ecosystem instead of
-  one per dependency.
+- One grouped pull request per ecosystem for GitHub Actions, Terraform, npm, Go modules,
+  Dart/Flutter (pub), and Rust (Cargo), so a busy day produces one PR and one CI run per
+  ecosystem instead of one per dependency.
 - Go updates run `go mod tidy`, as Dependabot did, so `go.sum` stays consistent.
 - No TypeScript major updates: vue-tsc and typescript-eslint do not support TypeScript 7
   yet. Remove the rule once they do.
